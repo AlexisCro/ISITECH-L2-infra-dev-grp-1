@@ -78,3 +78,6 @@ We use GIT and GITHUB, some advice to use git commands efficiently :
 - `git checkout -b <branch-name>` create the branch and switch on
 - `git add -p` add interactively modifications to the stage
 - `git push --force-with-lease` in case where you used a interactive rebase
+
+## CONTRIBUTING
+[Read this doc](./CONTRIBUTING.md)
