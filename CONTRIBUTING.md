@@ -13,3 +13,9 @@ It's possible to have to work on different features as a team so we have defined
 - enhancement/{topic} *for improvement of a feature*
 - fix/{topic} *fix a problem / bug*
 - doc/{topic}
+
+## Merge or Rebase 
+We use rebase instead of merge when we merge branch in develop. 
+
+## Realease
+We use git tag to identify version of our app and release system of GITHUB to notify changes between versions. 
