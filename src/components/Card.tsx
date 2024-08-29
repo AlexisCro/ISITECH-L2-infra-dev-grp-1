@@ -4,15 +4,15 @@ import { movie } from "../types/movie";
 import { useState } from "react";
 
 type IProps = {
-  title: string;
-  year: string;
-  genre: string;
-  director: string;
-  plot: string;
-  poster: string;
-  movie: movie;
-  favorites: movie[];
-  setFavoriteMovies: (movies: movie[]) => void;
+	title: string;
+	year: string;
+	genre: string;
+	director: string;
+	plot: string;
+	poster: string;
+	movie: movie;
+	favorites: movie[];
+	setFavoriteMovies: (movies: movie[]) => void;
 };
 
 const Card: FC<IProps> = (props) => {
@@ -25,8 +25,8 @@ const Card: FC<IProps> = (props) => {
   const addFavorite = (movie: movie) => {
     const newFavoriteMovies = [...favorites, movie];
 
-    setFavoriteMovies(newFavoriteMovies);
-  };
+		setFavoriteMovies(newFavoriteMovies);
+	};
 
   const removeFavorite = (movie: movie) => {
     const newFavoriteMovies = favorites.filter((favorites) => favorites.Title !== movie.Title);
@@ -70,7 +70,7 @@ const Card: FC<IProps> = (props) => {
       </div>
     </div>
 		</div>
-  );
+	);
 };
 
 export { Card };

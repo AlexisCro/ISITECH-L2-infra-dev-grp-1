@@ -3,6 +3,7 @@ import { movie } from "./types/movie";
 import { Card } from "./components/Card";
 import { FilterFavorites } from "./buttons/FilterFavorites";
 import { SearchMovie } from "./components/SearchMovies";
+import InputSwitch from "./components/InputSwitch";
 import movies from "./movies.json";
 import "./App.css";
 
@@ -24,6 +25,7 @@ function App() {
 
   return (
     <main>
+			<div className="w-100 pt-3 pb-5 ps-4">
       <SearchMovie
         onSearch={(query) => {
           setSearchQuery(query);
@@ -31,6 +33,8 @@ function App() {
         }}
         query={searchQuery}
       />
+				<InputSwitch></InputSwitch>
+			</div>
       <div className="d-flex justify-content-center align-items-center">
         <FilterFavorites
           onChange={(e) => {
