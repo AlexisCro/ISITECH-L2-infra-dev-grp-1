@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 
 const InputSwitch = () => {
 	useEffect(() => {
 		const checboxSwitch = document.getElementById("flexSwitchCheckDefault") as HTMLInputElement;
 		const nameMode = document.getElementById("nameMode") as HTMLLabelElement;
-		checboxSwitch?.addEventListener("change", () => {
+		checboxSwitch.addEventListener("change", () => {
 			if (checboxSwitch.checked) {
 				const elements = document.querySelectorAll('[data-bs-theme="light"]');
 				elements.forEach((element) => {
