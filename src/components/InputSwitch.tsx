@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 
 const InputSwitch = () => {
 	const [isDarkMode, setIsDarkMode] = useState(() => {
-		// Vérifiez le thème stocké dans le localStorage
 		const savedTheme = localStorage.getItem("theme");
 		return savedTheme === "dark";
 	});
@@ -65,7 +64,7 @@ const InputSwitch = () => {
 	}, [isDarkMode]);
 
 	return (
-		<div className="form-check form-switch d-flex justify-content-start align-items-center">
+		<div className="form-check form-switch d-flex justify-content-center justify-content-lg-start align-items-center">
 			<input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" defaultChecked={isDarkMode} />
 			<label className="form-check-label ms-3 d-flex align-items-center" htmlFor="flexSwitchCheckDefault" id="nameMode" style={{ fontSize: "1.5rem" }}></label>
 			{isDarkMode ? svgMoon : svgSun}
