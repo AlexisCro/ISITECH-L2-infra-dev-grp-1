@@ -1,24 +1,29 @@
 import { useState, useEffect } from "react";
+import { getMovies } from "./service/getMovies";
 import { movie } from "./types/movie";
 import { Card } from "./components/Card";
 import { FilterFavorites } from "./buttons/FilterFavorites";
 import { SearchMovie } from "./components/SearchMovies";
 import { InputSwitch } from "./components/InputSwitch";
-import movies from "./movies.json";
-import "./App.css";
 
 function App() {
 	const [favorites, setFavoriteMovies] = useState<movie[]>(JSON.parse(localStorage.getItem("favoriteMovies") || "[]"));
-	const [moviesList, setMoviesList] = useState<movie[]>(movies);
+	const [moviesList, setMoviesList] = useState<movie[]>([]);
 	const [isFavoritesFilter, setIsFavoritesFilter] = useState(false);
 	const [searchQuery, setSearchQuery] = useState("");
+
+  useEffect(() => {
+    getMovies().then((data) => {
+      setMoviesList(data.Search);
+    });
+  }, []);
 
 	useEffect(() => {
 		localStorage.setItem("favoriteMovies", JSON.stringify(favorites));
 	}, [favorites]);
 
 	const searchMovie = (search: string) => {
-		const sourceList = isFavoritesFilter ? favorites : movies;
+		const sourceList = isFavoritesFilter ? favorites : moviesList;
 		const filteredMovies = sourceList.filter((movie) => movie.Title.toLowerCase().includes(search.toLowerCase()));
 		setMoviesList(filteredMovies);
 	};
@@ -44,7 +49,9 @@ function App() {
 							setMoviesList(favorites);
 							setIsFavoritesFilter(true);
 						} else {
-							setMoviesList(movies);
+              getMovies().then((data) => {
+                setMoviesList(data.Search);
+              });
 							setIsFavoritesFilter(false);
 						}
 					}}
