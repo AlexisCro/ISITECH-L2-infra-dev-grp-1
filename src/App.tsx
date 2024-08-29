@@ -3,27 +3,27 @@ import { movie } from "./types/movie";
 import { Card } from "./components/Card";
 import { FilterFavorites } from "./buttons/FilterFavorites";
 import { SearchMovie } from "./components/SearchMovies";
-import InputSwitch from "./components/InputSwitch";
+import { InputSwitch } from "./components/InputSwitch";
 import movies from "./movies.json";
 import "./App.css";
 
 function App() {
-  const [favorites, setFavoriteMovies] = useState<movie[]>(JSON.parse(localStorage.getItem("favoriteMovies") || "[]"));
-  const [moviesList, setMoviesList] = useState<movie[]>(movies);
-  const [isFavoritesFilter, setIsFavoritesFilter] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
+	const [favorites, setFavoriteMovies] = useState<movie[]>(JSON.parse(localStorage.getItem("favoriteMovies") || "[]"));
+	const [moviesList, setMoviesList] = useState<movie[]>(movies);
+	const [isFavoritesFilter, setIsFavoritesFilter] = useState(false);
+	const [searchQuery, setSearchQuery] = useState("");
 
-  useEffect(() => {
-    localStorage.setItem("favoriteMovies", JSON.stringify(favorites));
-  }, [favorites]);
+	useEffect(() => {
+		localStorage.setItem("favoriteMovies", JSON.stringify(favorites));
+	}, [favorites]);
 
-  const searchMovie = (search: string) => {
-    const sourceList = isFavoritesFilter ? favorites : movies;
-    const filteredMovies = sourceList.filter((movie) => movie.Title.toLowerCase().includes(search.toLowerCase()));
-    setMoviesList(filteredMovies);
-  };
+	const searchMovie = (search: string) => {
+		const sourceList = isFavoritesFilter ? favorites : movies;
+		const filteredMovies = sourceList.filter((movie) => movie.Title.toLowerCase().includes(search.toLowerCase()));
+		setMoviesList(filteredMovies);
+	};
 
-  return (
+	return (
 		<main className="min-vh-100">
 			<nav className="w-100 d-flex justify-content-between pt-3 pb-5 ps-4">
 				<InputSwitch></InputSwitch>

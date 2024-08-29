@@ -32,11 +32,17 @@ const Card: FC<IProps> = (props) => {
 		const newFavoriteMovies = favorites.filter((favorites) => favorites.Title !== movie.Title);
 
 		setFavoriteMovies(newFavoriteMovies);
-	};
+  };
+
+  const theme = localStorage.getItem("theme");
+  let classCard = "card shadow";
+  if (theme === "dark") {
+    classCard += " bg-secondary text-white";
+  }
 
 	return (
 		<div className="col d-flex justify-content-center py-3">
-			<div className="card shadow" style={{ width: "18rem" }}>
+			<div className={classCard} style={{ width: "18rem" }}>
 				<img src={poster} className="card-img-top" alt={title} />
 				<div className="card-body">
 					<h5 className="card-title">

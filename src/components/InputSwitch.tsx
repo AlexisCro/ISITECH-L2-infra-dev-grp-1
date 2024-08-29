@@ -34,6 +34,7 @@ const InputSwitch = () => {
 				main.classList.add("bg-dark");
 				cards.forEach((element) => {
 					element.classList.add("bg-secondary");
+					element.classList.add("text-white");
 				});
 				textsAndLabels.forEach((element) => {
 					element.classList.add("text-white");
@@ -44,6 +45,7 @@ const InputSwitch = () => {
 				main.classList.remove("bg-dark");
 				cards.forEach((element) => {
 					element.classList.remove("bg-secondary");
+					element.classList.remove("text-white");
 				});
 				textsAndLabels.forEach((element) => {
 					element.classList.remove("text-white");
@@ -72,4 +74,4 @@ const InputSwitch = () => {
 	);
 };
 
-export default InputSwitch;
+export { InputSwitch };
