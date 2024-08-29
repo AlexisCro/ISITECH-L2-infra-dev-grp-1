@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { movie } from "./types/movie";
-import Navbar from "./components/Navbar";
 import { Card } from "./components/Card";
+import { FilterFavorites } from "./buttons/FilterFavorites";
 import movies from "./movies.json";
 import "./App.css";
 
@@ -9,6 +9,7 @@ import "./App.css";
 
 function App() {
   const [favorites, setFavoriteMovies] = useState<movie[]>(JSON.parse(localStorage.getItem('favoriteMovies') || '[]'));
+  const [moviesList, setMoviesList] = useState<movie[]>(movies);
 
   useEffect(() => {
     localStorage.setItem('favoriteMovies', JSON.stringify(favorites));
@@ -16,9 +17,22 @@ function App() {
 
   return (
     <main>
-      <Navbar />
+      <div 
+        className="d-flex justify-content-center align-items-center"
+      >
+        <FilterFavorites
+          onChange={(e) => {
+            if (e.target.checked) {
+              setMoviesList(favorites);
+            } else {
+              setMoviesList(movies);
+            }
+          }}
+        />
+      </div>
+
       <div className="cards-container">
-        {movies.map((movie, index) => (
+        {moviesList.map((movie, index) => (
           <Card 
             key={index}
             title={movie.Title}
