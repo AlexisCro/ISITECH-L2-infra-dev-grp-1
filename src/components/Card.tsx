@@ -68,7 +68,7 @@ const Card: FC<IProps> = (props) => {
             movie={movie}
             onClick={() => {
               favorites.filter((favorites) => favorites.Title === movie.Title && favorites.Year === movie.Year).length > 0 ? removeFavorite(movie) : addFavorite(movie);
-            }}
+            }}data-testid={`buttonFavorites`}
           />
           <button onClick={ShowDetail} className="btn btn-primary">
             {showDetails ? "Hide Details" : "Show Details"}
