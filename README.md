@@ -44,29 +44,36 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
 # ISITECH-L2-infra-dev-grp-1
 
 # WatchList
 
 ## Members
+
 | Full Name      | Student email address           | Role            |
 |----------------|---------------------------------|-----------------|
-| Alexis Crozier | alexis.crozier@ecole-isitech.fr | Product Owner   |
-| Matéo Deport   | mateo.deport@ecole-isitech.fr   | Developer       |
-| Clément Berard | clement.berard@ecole-isitech.fr | Lead Developer  |
-| Ruben Crocher  | ruben.crochet@ecole-isitech.fr  | Developer       |
+| Alexis Crozier | <alexis.crozier@ecole-isitech.fr> | Product Owner   |
+| Matéo Deport   | <mateo.deport@ecole-isitech.fr>   | Developer       |
+| Clément Berard | <clement.berard@ecole-isitech.fr> | Lead Developer  |
+| Ruben Crocher  | <ruben.crochet@ecole-isitech.fr>  | Developer       |
 
 ## Purpose of the App
-We want to provide our client the possibility to get an important movie list and to search them, add to favorite, use a dark mode and a light mode and to have the possibility to sort the movie list. 
+
+We want to provide our client the possibility to get an important movie list and to search them, add to favorite, use a dark mode and a light mode and to have the possibility to sort the movie list.
 
 # Development guide
-## Stack
-We use react with typescript and Bootstrap as CSS framework. 
 
-## Launch server 
+## Stack
+
+We use react with typescript and Bootstrap as CSS framework.
+
+## Launch server
+
 Run command `npm run start`
 
-# Our features available in our App
+## Our features available in our App
+
 - [ ] Movie listing providing by OMDB API
 - [ ] Input field to search movie
 - [ ] Create a favoris list of movie store in the local storage
@@ -74,10 +81,13 @@ Run command `npm run start`
 - [ ] Sort movie list
 
 ## Advices
+
 We use GIT and GITHUB, some advice to use git commands efficiently :
+
 - `git checkout -b <branch-name>` create the branch and switch on
 - `git add -p` add interactively modifications to the stage
 - `git push --force-with-lease` in case where you used a interactive rebase
 
 ## CONTRIBUTING
+
 [Read this doc](./CONTRIBUTING.md)
