@@ -1,8 +1,8 @@
-import React from "react";
+import InputSwitch from "./InputSwitch";
 
 const Navbar = () => {
 	return (
-		<nav className="navbar navbar-expand-lg bg-body-secondary">
+		<nav className="navbar navbar-expand-lg bg-body-secondary" data-bs-theme="light">
 			<div className="container-fluid">
 				<a className="navbar-brand" href="#">
 					Watch-List
@@ -12,15 +12,18 @@ const Navbar = () => {
 				</button>
 				<div className="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul className="navbar-nav me-auto mb-2 mb-lg-0">
-						<li className="nav-item">
+						<li className="nav-item px-1">
 							<a className="nav-link active" aria-current="page" href="#">
 								Home
 							</a>
 						</li>
-						<li className="nav-item">
+						<li className="nav-item px-1">
 							<a className="nav-link" href="#">
 								Link
 							</a>
+						</li>
+						<li className="nav-item d-flex justify-content-center align-items-center ps-5">
+							<InputSwitch></InputSwitch>
 						</li>
 					</ul>
 				</div>
