@@ -30,6 +30,7 @@ const Card: FC<IProps> = (props) => {
   const removeFavorite = (movie: movie) => {
     const newFavoriteMovies = favorites.filter((favorites) => favorites.Title !== movie.Title);
     setFavoriteMovies(newFavoriteMovies);
+
   };
 
   return (
