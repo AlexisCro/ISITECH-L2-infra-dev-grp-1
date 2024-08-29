@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 import { movie } from "./types/movie";
 import { Card } from "./components/Card";
-
 import { FilterFavorites } from "./buttons/FilterFavorites";
-import movies from "./movies.json";
 import { SearchMovie } from "./components/SearchMovies";
+import movies from "./movies.json";
 import "./App.css";
 
 // TODO: Use state to store the response API to avoid multiple requests
@@ -12,26 +11,38 @@ import "./App.css";
 function App() {
   const [favorites, setFavoriteMovies] = useState<movie[]>(JSON.parse(localStorage.getItem("favoriteMovies") || "[]"));
   const [moviesList, setMoviesList] = useState<movie[]>(movies);
+  const [isFavoritesFilter, setIsFavoritesFilter] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     localStorage.setItem("favoriteMovies", JSON.stringify(favorites));
   }, [favorites]);
 
   const searchMovie = (search: string) => {
-    const filteredMovies = movies.filter((movie) => movie.Title.toLowerCase().includes(search.toLowerCase()));
+    const sourceList = isFavoritesFilter ? favorites : movies;
+    const filteredMovies = sourceList.filter((movie) => movie.Title.toLowerCase().includes(search.toLowerCase()));
     setMoviesList(filteredMovies);
   };
 
   return (
     <main>
-      <SearchMovie onSearch={searchMovie} />
+      <SearchMovie
+        onSearch={(query) => {
+          setSearchQuery(query);
+          searchMovie(query);
+        }}
+        query={searchQuery}
+      />
       <div className="d-flex justify-content-center align-items-center">
         <FilterFavorites
           onChange={(e) => {
+            setSearchQuery("");
             if (e.target.checked) {
               setMoviesList(favorites);
+              setIsFavoritesFilter(true);
             } else {
               setMoviesList(movies);
+              setIsFavoritesFilter(false);
             }
           }}
         />

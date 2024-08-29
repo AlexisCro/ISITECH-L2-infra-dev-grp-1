@@ -1,15 +1,14 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 
 type IProps = {
   onSearch: (query: string) => void;
+  query: string;
 };
 
 const SearchMovie: FC<IProps> = (props) => {
-  const { onSearch } = props;
-  const [query, setQuery] = useState("");
+  const { onSearch, query } = props;
 
   const inputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setQuery(e.target.value);
     onSearch(e.target.value);
   };
 
