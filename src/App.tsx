@@ -33,7 +33,7 @@ function App() {
 
       <div className="cards-container">
         {moviesList.map((movie, index) => (
-          <Card 
+          <Card
             key={index}
             title={movie.Title}
             year={movie.Year}

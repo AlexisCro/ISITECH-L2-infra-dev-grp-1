@@ -21,6 +21,7 @@ const Card: FC<IProps> = (props) => {
   const ShowDetail = () => {
     setShowDetails(!showDetails);
   };
+
   const addFavorite = (movie: movie) => {
     const newFavoriteMovies = [...favorites, movie];
 
@@ -29,8 +30,8 @@ const Card: FC<IProps> = (props) => {
 
   const removeFavorite = (movie: movie) => {
     const newFavoriteMovies = favorites.filter((favorites) => favorites.Title !== movie.Title);
+    
     setFavoriteMovies(newFavoriteMovies);
-
   };
 
   return (
@@ -59,7 +60,7 @@ const Card: FC<IProps> = (props) => {
           favorites={favorites}
           movie={movie}
           onClick={() => {
-            favorites.some((favorite) => favorite.Title === movie.Title) ? removeFavorite(movie) : addFavorite(movie);
+            favorites.filter((favorites) => favorites.Title === movie.Title && favorites.Year === movie.Year).length > 0 ? removeFavorite(movie) : addFavorite(movie);
           }}
         />
         <button onClick={ShowDetail} className="btn btn-primary">

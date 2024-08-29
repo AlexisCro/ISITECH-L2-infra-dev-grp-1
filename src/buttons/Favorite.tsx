@@ -9,7 +9,7 @@ type IProps = {
 
 const Favorite: FC<IProps> = (props) => {
   const { onClick, favorites, movie } = props;
-  const isFavorite = favorites.some((favorite) => favorite === movie);
+  const isFavorite = favorites.filter((favorites) => favorites.Title === movie.Title && favorites.Year === movie.Year).length > 0 ? true : false;
 
   return (
     <button
