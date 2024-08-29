@@ -8,7 +8,7 @@ import { InputSwitch } from "./components/InputSwitch";
 
 function App() {
 	const [favorites, setFavoriteMovies] = useState<movie[]>(JSON.parse(localStorage.getItem("favoriteMovies") || "[]"));
-	const [moviesList, setMoviesList] = useState<movie[]>(movies);
+	const [moviesList, setMoviesList] = useState<movie[]>([]);
 	const [isFavoritesFilter, setIsFavoritesFilter] = useState(false);
 	const [searchQuery, setSearchQuery] = useState("");
 
@@ -23,7 +23,7 @@ function App() {
 	}, [favorites]);
 
 	const searchMovie = (search: string) => {
-		const sourceList = isFavoritesFilter ? favorites : movies;
+		const sourceList = isFavoritesFilter ? favorites : moviesList;
 		const filteredMovies = sourceList.filter((movie) => movie.Title.toLowerCase().includes(search.toLowerCase()));
 		setMoviesList(filteredMovies);
 	};
@@ -49,7 +49,9 @@ function App() {
 							setMoviesList(favorites);
 							setIsFavoritesFilter(true);
 						} else {
-							setMoviesList(movies);
+              getMovies().then((data) => {
+                setMoviesList(data.Search);
+              });
 							setIsFavoritesFilter(false);
 						}
 					}}
