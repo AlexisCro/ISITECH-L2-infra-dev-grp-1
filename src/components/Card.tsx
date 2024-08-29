@@ -1,5 +1,6 @@
 import { FC } from "react";
-
+import { Favorite } from "../buttons/Favorite";
+import { movie } from "../types/movie";
 
 type IProps = {
   title: string;
@@ -8,9 +9,25 @@ type IProps = {
   director: string;
   plot: string;
   poster: string;
+  movie: movie;
+  favorites: movie[];
+  setFavoriteMovies: (movies: movie[]) => void;
 };
 
-const Card: FC<IProps> = ({ title, year, genre, director, plot, poster }) => {
+const Card: FC<IProps> = (props) => {  
+  const { title, year, genre, director, plot, poster, movie, favorites, setFavoriteMovies } = props;
+
+  const addFavorite = (movie: movie) => {
+    const newFavoriteMovies = [...favorites, movie];
+
+    setFavoriteMovies(newFavoriteMovies);
+  };
+
+  const removeFavorite = (movie: movie) => {
+    const newFavoriteMovies = favorites.filter((favorites) => favorites.Title !== movie.Title);
+    setFavoriteMovies(newFavoriteMovies);
+  };
+
   return (
     <div className="card" style={{ width: "18rem" }}>
       <img src={poster} className="card-img-top" alt={title} />
@@ -25,6 +42,15 @@ const Card: FC<IProps> = ({ title, year, genre, director, plot, poster }) => {
           <strong>Director:</strong> {director}
         </p>
         <p className="card-text">{plot}</p>
+      </div>
+      <div className="card-footer">
+        <Favorite
+          favorites={favorites}
+          movie={movie}
+          onClick= {() => {
+            favorites.some((favorite) => favorite.Title === movie.Title) ? removeFavorite(movie) : addFavorite(movie);
+          }}
+        />
       </div>
     </div>
   );
