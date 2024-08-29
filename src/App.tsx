@@ -15,7 +15,6 @@ function App() {
     localStorage.setItem('favoriteMovies', JSON.stringify(favorites));
   }, [favorites]);
 
-  console.log(favorites);
   return (
     <main>
       <div 
