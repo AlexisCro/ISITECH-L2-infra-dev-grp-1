@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { movie } from "./types/movie";
 import { Card } from "./components/Card";
+
 import { FilterFavorites } from "./buttons/FilterFavorites";
 import movies from "./movies.json";
 import { SearchMovie } from "./components/SearchMovies";
@@ -35,7 +36,6 @@ function App() {
           }}
         />
       </div>
-
       <div className="cards-container">
         {moviesList.map((movie, index) => (
           <Card key={index} title={movie.Title} year={movie.Year} genre={movie.Genre} director={movie.Director} plot={movie.Plot} poster={movie.Poster} movie={movie} favorites={favorites} setFavoriteMovies={setFavoriteMovies} />
