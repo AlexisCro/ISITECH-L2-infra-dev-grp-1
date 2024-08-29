@@ -1,7 +1,6 @@
-import { FC, useState, useEffect } from "react";
+import { FC } from "react";
 import { Favorite } from "../buttons/Favorite";
 import { movie } from "../types/movie";
-
 
 type IProps = {
   title: string;
@@ -45,7 +44,9 @@ const Card: FC<IProps> = (props) => {
         <p className="card-text">{plot}</p>
       </div>
       <div className="card-footer">
-        <Favorite 
+        <Favorite
+          favorites={favorites}
+          movie={movie}
           onClick= {() => {
             favorites.some((favorite) => favorite.Title === movie.Title) ? removeFavorite(movie) : addFavorite(movie);
           }}

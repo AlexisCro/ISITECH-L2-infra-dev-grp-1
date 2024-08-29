@@ -12,7 +12,7 @@ function App() {
 
   useEffect(() => {
     localStorage.setItem('favoriteMovies', JSON.stringify(favorites));
-  });
+  }, [favorites]);
 
   return (
     <main>
