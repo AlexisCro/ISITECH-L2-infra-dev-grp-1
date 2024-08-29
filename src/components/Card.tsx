@@ -66,15 +66,6 @@ const Card: FC<IProps> = (props) => {
           {showDetails ? "Hide Details" : "Show Details"}
         </button>
       </div>
-      <div className="card-footer">
-        <Favorite
-          favorites={favorites}
-          movie={movie}
-          onClick= {() => {
-            favorites.some((favorite) => favorite.Title === movie.Title) ? removeFavorite(movie) : addFavorite(movie);
-          }}
-        />
-      </div>
     </div>
   );
 };
