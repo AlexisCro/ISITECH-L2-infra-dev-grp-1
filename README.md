@@ -1,5 +1,20 @@
 # ISITECH-L2-infra-dev-grp-1
 
+## Members
+
+| Full Name      | Student email address             | Role            |
+|----------------|-----------------------------------|-----------------|
+| Alexis Crozier | <alexis.crozier@ecole-isitech.fr> | Product Owner   |
+| Matéo Deport   | <mateo.deport@ecole-isitech.fr>   | Developer       |
+| Clément Berard | <clement.berard@ecole-isitech.fr> | Lead Developer  |
+| Ruben Crocher  | <ruben.crochet@ecole-isitech.fr>  | Developer       |
+
+Ruben Crochet don't work in the project. Thursday, 29th August 2024, he doesn't answer to our messages, he was absent in the morning and he come back in the afternoon. We don't know why he doesn't answer to our messages and he doesn't work in the project since the beginning. You can see it in 'Contributors'.
+
+## Note of intent
+
+We have to create a movie list with the OMDB API. We have to display the movie list, to search a movie, to add a movie to the favorite list, to sort the movie list and to switch between dark mode and light mode.
+
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -48,15 +63,6 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 To learn React, check out the [React documentation](https://reactjs.org/).
 
 ## WatchList
-
-### Members
-
-| Full Name      | Student email address           | Role            |
-|----------------|---------------------------------|-----------------|
-| Alexis Crozier | <alexis.crozier@ecole-isitech.fr> | Product Owner   |
-| Matéo Deport   | <mateo.deport@ecole-isitech.fr>   | Developer       |
-| Clément Berard | <clement.berard@ecole-isitech.fr> | Lead Developer  |
-| Ruben Crocher  | <ruben.crochet@ecole-isitech.fr>  | Developer       |
 
 ### Purpose of the App
 
