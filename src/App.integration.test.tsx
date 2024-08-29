@@ -12,8 +12,12 @@ test("clicking on favorite button saves item to localStorage", async () => {
     const key = "favoriteMovies";
     const storedValue = localStorage.getItem(key);
     expect(storedValue).not.toBeNull();
-    const parsedValue = JSON.parse(storedValue || "[]");
-    expect(parsedValue.length).toBeGreaterThan(0);
-    expect(parsedValue[0].Title).toBe("Spider-Man");
   });
+
+  const key = "favoriteMovies";
+  const storedValue = localStorage.getItem(key);
+  const parsedValue = JSON.parse(storedValue || "[]");
+
+  expect(parsedValue.length).toBeGreaterThan(0);
+  expect(parsedValue[0].Title).toBe("Spider-Man");
 });
