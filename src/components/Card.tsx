@@ -15,7 +15,7 @@ type IProps = {
   setFavoriteMovies: (movies: movie[]) => void;
 };
 
-const Card: FC<IProps> = (props) => {  
+const Card: FC<IProps> = (props) => {
   const [showDetails, setShowDetails] = useState(false);
   const { title, year, genre, director, plot, poster, movie, favorites, setFavoriteMovies } = props;
   const ShowDetail = () => {
@@ -30,7 +30,6 @@ const Card: FC<IProps> = (props) => {
   const removeFavorite = (movie: movie) => {
     const newFavoriteMovies = favorites.filter((favorites) => favorites.Title !== movie.Title);
     setFavoriteMovies(newFavoriteMovies);
-
   };
 
   return (
@@ -49,22 +48,22 @@ const Card: FC<IProps> = (props) => {
         {showDetails && (
           <div className="card-details">
             <p className="card-text">
-              <strong>Plot:</strong> {plot}
+              <strong>Detail :</strong> {plot}
             </p>
           </div>
         )}
-        <button onClick={ShowDetail} className="btn btn-primary">
-          {showDetails ? "Hide Details" : "Show Details"}
-        </button>
       </div>
-      <div className="card-footer">
+      <div className="card-footer d-flex justify-content-between">
         <Favorite
           favorites={favorites}
           movie={movie}
-          onClick= {() => {
+          onClick={() => {
             favorites.some((favorite) => favorite.Title === movie.Title) ? removeFavorite(movie) : addFavorite(movie);
           }}
         />
+        <button onClick={ShowDetail} className="btn btn-primary">
+          {showDetails ? "Hide Details" : "Show Details"}
+        </button>
       </div>
     </div>
   );
