@@ -45,7 +45,8 @@ function App() {
           }}
         />
       </div>
-      <div className="cards-container">
+
+      <div className="container py-5">
         {moviesList.map((movie, index) => (
           <Card key={index} title={movie.Title} year={movie.Year} genre={movie.Genre} director={movie.Director} plot={movie.Plot} poster={movie.Poster} movie={movie} favorites={favorites} setFavoriteMovies={setFavoriteMovies} />
         ))}

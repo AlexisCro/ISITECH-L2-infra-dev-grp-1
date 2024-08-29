@@ -35,6 +35,7 @@ const Card: FC<IProps> = (props) => {
   };
 
   return (
+		<div className="col d-flex justify-content-center">
     <div className="card" style={{ width: "18rem" }}>
       <img src={poster} className="card-img-top" alt={title} />
       <div className="card-body">
@@ -68,6 +69,7 @@ const Card: FC<IProps> = (props) => {
         </button>
       </div>
     </div>
+		</div>
   );
 };
 
