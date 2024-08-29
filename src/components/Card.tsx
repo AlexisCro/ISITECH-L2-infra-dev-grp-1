@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { Favorite } from "../buttons/Favorite";
 import { movie } from "../types/movie";
+import { useState } from "react";
 
 type IProps = {
   title: string;
@@ -15,8 +16,11 @@ type IProps = {
 };
 
 const Card: FC<IProps> = (props) => {  
+  const [showDetails, setShowDetails] = useState(false);
   const { title, year, genre, director, plot, poster, movie, favorites, setFavoriteMovies } = props;
-
+  const ShowDetail = () => {
+    setShowDetails(!showDetails);
+  };
   const addFavorite = (movie: movie) => {
     const newFavoriteMovies = [...favorites, movie];
 
@@ -26,6 +30,7 @@ const Card: FC<IProps> = (props) => {
   const removeFavorite = (movie: movie) => {
     const newFavoriteMovies = favorites.filter((favorites) => favorites.Title !== movie.Title);
     setFavoriteMovies(newFavoriteMovies);
+
   };
 
   return (
@@ -41,7 +46,16 @@ const Card: FC<IProps> = (props) => {
         <p className="card-text">
           <strong>Director:</strong> {director}
         </p>
-        <p className="card-text">{plot}</p>
+        {showDetails && (
+          <div className="card-details">
+            <p className="card-text">
+              <strong>Plot:</strong> {plot}
+            </p>
+          </div>
+        )}
+        <button onClick={ShowDetail} className="btn btn-primary">
+          {showDetails ? "Hide Details" : "Show Details"}
+        </button>
       </div>
       <div className="card-footer">
         <Favorite
