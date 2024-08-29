@@ -6,8 +6,6 @@ import { SearchMovie } from "./components/SearchMovies";
 import movies from "./movies.json";
 import "./App.css";
 
-// TODO: Use state to store the response API to avoid multiple requests
-
 function App() {
   const [favorites, setFavoriteMovies] = useState<movie[]>(JSON.parse(localStorage.getItem("favoriteMovies") || "[]"));
   const [moviesList, setMoviesList] = useState<movie[]>(movies);
