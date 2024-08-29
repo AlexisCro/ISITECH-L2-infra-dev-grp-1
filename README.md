@@ -103,6 +103,7 @@ We use GIT and GITHUB, some advice to use git commands efficiently :
 We need some difficulties to :
 
 - use correctly the API and his return. At first, we got the idea to display all movies but the API return an error and it wants a search query. So we decided to display only 'heroes' movies and a search bar. After, we got difficulties to got the response of th API. When we display the response in the console, we got an error. We found the solution by using the `then` method.
+- We decided, after searching a movie, to press enter when we cancel the search ? Why ? Because if we ask the API for each letter, there were too many requests.
 - install vitest with this error :
 
 ```shell
