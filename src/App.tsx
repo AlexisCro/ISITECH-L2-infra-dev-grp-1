@@ -24,7 +24,7 @@ function App() {
   };
 
   return (
-		<main className="h-100">
+		<main className="min-vh-100">
 			<nav className="w-100 d-flex justify-content-between pt-3 pb-5 ps-4">
 				<InputSwitch></InputSwitch>
 				<h1 className="h1 me-4">WatchList</h1>
@@ -53,8 +53,7 @@ function App() {
 
 			<div className="container py-5">
 				<div className="row">
-					{
-						moviesList.map((movie, index) => (
+					{moviesList.map((movie, index) => (
 						<Card key={index} title={movie.Title} year={movie.Year} genre={movie.Genre} director={movie.Director} plot={movie.Plot} poster={movie.Poster} movie={movie} favorites={favorites} setFavoriteMovies={setFavoriteMovies} />
 					))}
 				</div>
