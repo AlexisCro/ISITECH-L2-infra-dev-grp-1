@@ -36,7 +36,7 @@ const Card: FC<IProps> = (props) => {
 
 	return (
 		<div className="col d-flex justify-content-center py-3">
-			<div className="card" style={{ width: "18rem" }}>
+			<div className="card shadow" style={{ width: "18rem" }}>
 				<img src={poster} className="card-img-top" alt={title} />
 				<div className="card-body">
 					<h5 className="card-title">
