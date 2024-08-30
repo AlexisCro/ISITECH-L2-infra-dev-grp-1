@@ -46,16 +46,6 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-`npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
@@ -84,7 +74,7 @@ Run command `npm run start`
 - [ ] Input field to search movie
 - [ ] Create a favoris list of movie store in the local storage
 - [ ] Switch between dark mode / light mode
-- [ ] Sort movie list
+- [ ] Filter movie list
 
 ### Advices
 
@@ -171,3 +161,14 @@ npm error A complete log of this run can be found in: /home/clem/.npm/_logs/2024
 ```
 
 We understand that we don't use the latest version of nodejs. We update nodejs and it works !
+
+### No vite
+Unfortunately we have forgotten to use Vite in our project at the initialization of this one. 
+
+So that it's difficult to use vitest to create a test stack, this is why we assume to use Jest as test stack instead. 
+
+We apologize this mistake but as we don't have a lot of time to work on this project we take the decision to not begin from scratch again the project and adapt our stack instead.
+
+We think the most important part of the project is to have the capability to learn of our mistake and adapt the situation to provide a functionnal project and answer to each topic that we have to implement in the project. 
+
+We could run test with Jest as we could do with vitest.
