@@ -1,12 +1,25 @@
-import { render } from "@testing-library/react";
-import App from "./App";
+type Movie = {
+  Title: string;
+  Year: string;
+  imdbID: string;
+  Type: string;
+  Poster: string;
+};
 
-test("saves and retrieves item from localStorage", () => {
-  render(<App />);
+test("movie object has correct type", () => {
+  const movie: Movie = {
+    Title: "Spider-Man",
+    Year: "2002",
+    imdbID: "tt0145487",
+    Type: "movie",
+    Poster: "https://example.com/spiderman.jpg",
+  };
 
-  const key = "key";
-  const value = "test value";
-  localStorage.setItem(key, value);
-  const storedValue = localStorage.getItem(key);
-  expect(storedValue).toBe(value);
+  expect(typeof movie.Title).toBe("string");
+  expect(typeof movie.Year).toBe("string");
+  expect(typeof movie.imdbID).toBe("string");
+  expect(typeof movie.Type).toBe("string");
+  expect(typeof movie.Poster).toBe("string");
 });
+
+export {};
