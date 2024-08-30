@@ -18,7 +18,7 @@ const Favorite: FC<IProps> = (props) => {
       : false;
 
   return (
-    <button className="btn btn-primary" onClick={onClick}>
+    <button className="btn btn-primary" onClick={onClick} data-testid={`buttonFavorites-${movie.Title}-${movie.Year}`}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="16"
