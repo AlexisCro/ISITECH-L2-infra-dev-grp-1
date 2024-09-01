@@ -67,7 +67,7 @@ const InputSwitch = () => {
 
 	return (
 		<div className="col form-check form-switch d-flex justify-content-start align-items-center">
-			<input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" defaultChecked={isDarkMode} />
+			<input data-testid="switchMode" className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" defaultChecked={isDarkMode} />
 			<label className="form-check-label fs-5 ms-3 d-flex align-items-center" htmlFor="flexSwitchCheckDefault" id="nameMode"></label>
 			{isDarkMode ? svgMoon : svgSun}
 		</div>

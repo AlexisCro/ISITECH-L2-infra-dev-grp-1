@@ -1,0 +1,17 @@
+name: Linters static test
+
+on:
+  push:
+jobs:
+  run-static-codebase-analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: install dependencies
+        run: npm i
+      - name: Run linter
+        run: npm run lint
+      - name: Run Formatter
+        run: npm run format
+      - name: Run type-check
+        run: npm run type-check

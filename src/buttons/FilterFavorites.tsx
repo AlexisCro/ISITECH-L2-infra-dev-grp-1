@@ -2,7 +2,7 @@ import { FC, ChangeEventHandler } from "react";
 
 type IProps = {
   onChange: ChangeEventHandler<HTMLInputElement>;
-}
+};
 
 const FilterFavorites: FC<IProps> = (props) => {
   const { onChange } = props;
@@ -11,9 +11,9 @@ const FilterFavorites: FC<IProps> = (props) => {
     <div className="d-flex align-items-center">
       <label>Display only your favorites movies</label>
       <input
-        style={{ 
+        style={{
           width: 20,
-          height: 20
+          height: 20,
         }}
         className="m-2"
         type="checkbox"
