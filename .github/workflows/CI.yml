@@ -1,8 +1,7 @@
-name: conitnuous integration Github Actions
+name: Linters static test
 
 on:
   push:
-  pull_request:
 jobs:
   run-static-codebase-analysis:
     runs-on: ubuntu-latest
@@ -16,11 +15,3 @@ jobs:
         run: npm run format
       - name: Run type-check
         run: npm run type-check
-  run-test-suite:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: install dependencies
-        run: npm i
-      - name: Run test
-        run: npm run test

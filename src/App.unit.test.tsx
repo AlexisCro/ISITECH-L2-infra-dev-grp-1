@@ -1,25 +1,21 @@
-type Movie = {
-  Title: string;
-  Year: string;
-  imdbID: string;
-  Type: string;
-  Poster: string;
-};
+import { movie } from "./types/movie";
 
 test("movie object has correct type", () => {
-  const movie: Movie = {
+  const movies: movie = {
     Title: "Spider-Man",
     Year: "2002",
-    imdbID: "tt0145487",
-    Type: "movie",
+    Genre: "Action, Adventure",
+    Director: "Sam Raimi",
+    Plot: "movie",
     Poster: "https://example.com/spiderman.jpg",
   };
 
-  expect(typeof movie.Title).toBe("string");
-  expect(typeof movie.Year).toBe("string");
-  expect(typeof movie.imdbID).toBe("string");
-  expect(typeof movie.Type).toBe("string");
-  expect(typeof movie.Poster).toBe("string");
+  expect(typeof movies.Title).toBe("string");
+  expect(typeof movies.Year).toBe("string");
+  expect(typeof movies.Genre).toBe("string");
+  expect(typeof movies.Director).toBe("string");
+  expect(typeof movies.Plot).toBe("string");
+  expect(typeof movies.Poster).toBe("string");
 });
 
 export {};
